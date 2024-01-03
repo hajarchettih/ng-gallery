@@ -1,0 +1,48 @@
+<br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="text-center">
+        <h2 class="mb-4 text-primary">Ajouter vos Photos</h2>
+      </div>
+      <form [formGroup]="photoForm" (ngSubmit)="onSubmit()">
+        <!-- Champ pour le titre -->
+        <div class="form-group">
+          <label>Titre : </label>
+          <input type="text" formControlName="title" class="form-control" />
+          <div class="text-danger">{{ showErrorMessage("title") }}</div>
+        </div>
+        <!-- Champ pour le Description -->
+        <div class="form-group">
+          <label>Description : </label>
+          <input
+            type="text"
+            formControlName="description"
+            class="form-control"
+          />
+          <div class="text-danger">{{ showErrorMessage("description") }}</div>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="file">Choisir photo : </label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="file"
+            (change)="onFileSelected($event)"
+          />
+        </div>
+        <br />
+        <!-- Bouton pour soumettre les données -->
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!photoForm.valid || !photoForm.touched"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<br /><br />

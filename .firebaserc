@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gallery-ng": {
+      "hosting": {
+        "ng-gallery": [
+          "gallery-ng-8211c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gallery-ng"
+  }
+}
